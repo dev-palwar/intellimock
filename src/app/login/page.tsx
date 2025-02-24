@@ -1,11 +1,11 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { LucideGithub } from "lucide-react";
-import { signIn, useSession } from "next-auth/react";
+
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import LoginPage from "./components/login";
 
-export default function LoginPage() {
+export default function Page() {
   const router = useRouter();
 
   const session = useSession();
@@ -16,16 +16,5 @@ export default function LoginPage() {
     }
   }, [session]);
 
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br bg-[#1A1A1D]">
-      <Button
-        className="w-[13%]"
-        variant="outline"
-        onClick={() => signIn("github")}
-      >
-        <LucideGithub className="mr-2 h-4 w-4" />
-        Sign in with GitHub
-      </Button>
-    </div>
-  );
+  return <LoginPage />;
 }

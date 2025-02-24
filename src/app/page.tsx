@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { signOut, useSession } from "next-auth/react";
+import { Input } from "@/components/ui/input";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -16,9 +16,10 @@ export default function Home() {
   }, [session.status, router]);
 
   return (
-    <div className="flex flex-col h-[100vh] items-center justify-center">
-      <h1>om ganeshaya namah</h1>
-      <Button onClick={() => signOut()}>logout</Button>
+    <div className="flex min-h-screen items-center justify-center flex-col gap-4">
+      <div>
+        <Input type="file" className="cursor-pointer" />
+      </div>
     </div>
   );
 }
