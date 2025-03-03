@@ -21,7 +21,7 @@ const Header = () => {
   const links = [{ label: "Dashboard", link: "/dashboard" }];
 
   return (
-    <div className="flex p-8 justify-between items-center sticky top-0 left-0 right-0 z-20">
+    <div className="flex p-8 justify-between items-center sticky top-0 left-0 right-0 z-20 bg-white">
       <div className="left-part">
         <h1
           className="uppercase text-xl font-semibold cursor-pointer"
